@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css2?family=Days+One&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat&display=swap);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.wrapper {
+  background: linear-gradient(112.74deg, #FFD3A3 6.08%, rgba(255, 200, 159, 0.82) 34.26%, rgba(255, 211, 163, 0.57) 63.35%, rgba(255, 211, 163, 0.4) 93.36%);
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 460 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template: 460 1fr / 1fr;
+}
+
+.content {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  display: -ms-grid;
+  display: grid;
+  justify-content: center;
+  align-items: end;
+}
+
+.content h1 {
+  width: 642px;
+  height: 138px;
+  font-family: 'Days One';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 46px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #000000;
+}
+
+.button {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  display: -ms-grid;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.button button {
+  width: 340px;
+  height: 67px;
+  border: 1px solid #FF6C52;
+  box-sizing: border-box;
+  background-color: Transparent;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 50px;
+  letter-spacing: 0.03em;
+  color: #FF6C52;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button button:hover {
+  background: rgba(255, 200, 159, 0.76);
+}
+
