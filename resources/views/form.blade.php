@@ -30,6 +30,8 @@
                     </div>
                 </div>
                 <div class="form__item">
+                   
+                    <form class="items__form" id="orderForm" action="{{ url('/form/store') }}" method="post">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -39,8 +41,6 @@
                             </ul>
                         </div>
                     @endif
-                    <form class="items__form" id="orderForm" action="{{ url('/form/store') }}" method="post">
-                    
                         {{ csrf_field() }}
                         <div class="form__row">
                             <input placeholder="Name*" name="username" type="text" required>

@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\Admin\FormController;
 use App\Http\Controllers\FormCreateController;
+use App\Models\Catalog;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $categories = Catalog::all('name');
+    return view('index', [
+        'categories' => $categories
+    ]);
 })->name('index');
 
 Route::get('sendform', function () {

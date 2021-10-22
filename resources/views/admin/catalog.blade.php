@@ -24,8 +24,8 @@
                       <td>{{ $catalog->name }}</td>
                       <td class="text-right">
                         <a href="{{ route('catalog.edit', $catalog->id) }}" class="btn btn-sm bg-gradient-warning m-1"><i class="fas fa-pencil-alt"></i> Змінити</a>
-                        <a class="btn btn-sm bg-gradient-danger m-1"><i class="fas fa-times"></i> Видалити</a>
-                        <a class="btn btn-sm bg-gradient-primary m-1"><i class="far fa-eye"></i> Переглянути</a>
+                        <!-- <a class="btn btn-sm bg-gradient-danger m-1"><i class="fas fa-times"></i> Видалити</a> -->
+                        <a href="{{ url('catalog/' . $catalog->name) }}" class="btn btn-sm bg-gradient-primary m-1"><i class="far fa-eye"></i> Переглянути</a>
                       </td>
                     </tr>
                     @endforeach

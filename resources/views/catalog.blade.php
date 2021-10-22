@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/catalos.css">
+    <link rel="stylesheet" href="{{ asset('css/catalos.css') }}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,19 +22,25 @@
         </header>
         <div class="catalog__product">
             <h1 class="product__title">
-                Pilasters
+                {{ $category->name }}
             </h1>
+            @if (json_decode($category->photos))
             <div class="product__items">
-                <div class="product__item">
-                    <img class="product__image" src="{{ asset('img/catalog_1_1.svg') }}" alt="">
-                    <p class="product__size"></p>
-                </div>
+                @foreach (json_decode($category->photos) as $key => $photo)
+                    <div class="product__item">)
+                        <img class="product__image" src="{{ asset('uploads/' . $photo) }}" alt="Catalog Photo">
+                        <p class="product__size"></p>
+                    </div>
+
+                @endforeach
+                
                 <div class="product__item">
                     <img class="product__image" src="{{ asset('img/catalog_1_2.svg') }}" alt="">
                     <p class="product__size"></p>
                 </div>
                 
             </div>   
+            @endif
         </div> 
     </div>
     </div>

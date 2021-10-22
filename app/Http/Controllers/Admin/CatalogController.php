@@ -62,7 +62,12 @@ class CatalogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $catalogItem = Catalog::where('id', $id)->first();
+        // return response($catalogItem);
+
+        return view('admin.catalog.edit', [
+            'catalogItem' => $catalogItem
+        ]);
     }
 
     /**
@@ -74,7 +79,22 @@ class CatalogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $new_name = rand() . '.' . $img->getClientOriginalExtension();
+                $img->move(public_path('uploads'), $new_name);
+                $data[] = $new_name;
+            }
+            
+            $catalog = Catalog::find($id);
+
+            $catalog->photos = json_encode($data);
+
+            $catalog->save();
+
+            return redirect()->back()->with('success', "Зміни збережені успішно!");
+        }
+        return response($request);
     }
 
     /**

@@ -70,10 +70,12 @@
             <section class="catalog-main__content">
                 <div class="catalog-content">
                     <ul class="catalog-content__list">
+                        @foreach ($categories as $id => $category)
                         <li>
-                            <a href="#tab_01" onclick="addActive('01')" class="tabs__item"><p id="01">Pilasters</p></a>
+                            <a href="#tab_0{{ $id + 1 }}" onclick="addActive('0{{ $id + 1 }}')" class="tabs__item"><p id="0{{ $id + 1 }}">{{ $category->name }}</p></a>
                         </li>
-                        <li>
+                        @endforeach
+                        <!-- <li>
                             <a href="#tab_02" onclick="addActive('02')" class="tabs__item"><p id="02">Brackets</p></a>
                         </li>
                         <li>
@@ -93,7 +95,7 @@
                         </li>
                         <li>
                             <a href="#tab_08" onclick="addActive('08')" class="tabs__item"><p id="08">Friezes</p></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="tabs__body">
