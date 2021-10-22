@@ -19,4 +19,5 @@ mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/form-style.css', 'public/css')
     .postCss('resources/css/solid.css', 'public/css')
     .postCss('resources/css/sendform.css', 'public/css')
+    .postCss('resources/css/bootstrap-grid.css', 'public/css')
     .postCss('resources/css/catalos.css', 'public/css');

@@ -78,23 +78,24 @@ class CatalogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $catalog = Catalog::find($id);
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
                 $new_name = rand() . '.' . $img->getClientOriginalExtension();
                 $img->move(public_path('uploads'), $new_name);
                 $data[] = $new_name;
             }
-            
-            $catalog = Catalog::find($id);
-
             $catalog->photos = json_encode($data);
-
-            $catalog->save();
-
-            return redirect()->back()->with('success', "Зміни збережені успішно!");
         }
-        return response($request);
+        
+
+        $catalog->name = $request->name;
+
+
+        $catalog->save();
+
+        return redirect()->back()->with('success', "Зміни збережені успішно!");
     }
 
     /**

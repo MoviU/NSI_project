@@ -10,15 +10,12 @@
     <title>NSI</title>
 </head>
 <body>
-    <div class="wrapper">
-<!---------------------------- PAGE 1 -------------------------------------->
-        <div class="main-page">
             <header class="header">
                 <div class="header-container container">
-                    <a href="" class="header__logo">
-                        <img src="{{ asset('img/logo.svg') }}" alt="">
-                    </a>
-                    <nav class="header__menu menu">
+                    <nav class="header__menu" id="menu">
+                        <a href="" class="header__logo">
+                            <img src="{{ asset('img/logo.svg') }}" alt="">
+                        </a>
                         <ul class="menu__list">
                             <li class="menu__item">
                                 <a href="#tab_2" class="menu__link">About</a>
@@ -31,16 +28,21 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="header__search">
-                        <div class="search__block">
-                            <form action="">
-                                <input type="text" placeholder="search">
-                                <button type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </form>
-                            <img src="{{ asset('img/line.svg') }}" alt="">
+                    <section class="header-block__row"> 
+                        <div class="header-block__search">
+                            <div class="search__block">
+                                <form action="">
+                                    <input type="text" placeholder="search">
+                                    <button type="submit">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </form>
+                                <img src="{{ asset('img/line.svg') }}" alt="">
+                            </div>
                         </div>
-                    </div>
+                        <div class="header-block__burger-menu">
+                            <img src="{{ asset('img/menu_burger.svg') }}" alt="">
+                        </div>
+                    </section>
                 </div>
             </header>

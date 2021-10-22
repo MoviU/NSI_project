@@ -34741,6 +34741,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/css/bootstrap-grid.css":
+/*!******************************************!*\
+  !*** ./resources/css/bootstrap-grid.css ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/catalos.css":
 /*!***********************************!*\
   !*** ./resources/css/catalos.css ***!
@@ -50048,6 +50061,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 			"css/app": 0,
 /******/ 			"css/catalos": 0,
 /******/ 			"css/all": 0,
+/******/ 			"css/bootstrap-grid": 0,
 /******/ 			"css/solid": 0
 /******/ 		};
 /******/ 		
@@ -50098,14 +50112,15 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/css/all.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/css/style.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/css/form-style.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/css/solid.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/css/sendform.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/solid"], () => (__webpack_require__("./resources/css/catalos.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/css/all.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/css/style.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/css/form-style.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/css/solid.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/css/sendform.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/css/bootstrap-grid.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/form-style","css/sendform","css/style","css/app","css/catalos","css/all","css/bootstrap-grid","css/solid"], () => (__webpack_require__("./resources/css/catalos.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
