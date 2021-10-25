@@ -16,7 +16,8 @@ class CreateCatalogsTable extends Migration
         Schema::create('catalogs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('photos');
+            $table->string('photos')->nullable();
+            $table->string('photos_smooth')->nullable();
             $table->timestamps();
         });
     }

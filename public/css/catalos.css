@@ -215,4 +215,29 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
   }
 }
-
+.catalog__tag {
+  font-family: Days One;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0.03em; 
+  color: #000000;
+  opacity: 50%;
+}
+.tag__li {
+  width: 450px;
+  height: 25px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.active {
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  opacity: 100%;
+  border-bottom: 1.5px solid #000;
+}
+/* .tags {
+  display: flex;
+  justify-content: center;
+} */

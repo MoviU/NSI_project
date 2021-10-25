@@ -25,16 +25,32 @@
             <h1 class="product__title">
                 {{ $category->name }}
             </h1>
+            @if ($category_smooth && $category_list)
+
+                    <div class="tag__li">
+                        <div class="">
+                            <a href="#" id="tag_1" onclick="tagChange(this)" class="catalog__tag active">
+                                With pattern
+                            </a>
+                        </div>
+                        <div class="">
+                            <a href="#" id="tag_2" onclick="tagChange(this)" class="catalog__tag">
+                                Smooth
+                            </a>
+                        </div>
+                    </div>
+
+            @endif
             @if ($category_list)
             <div class="product__items">
-                <div class="container-b">
+                <div class="container-b" id="pattern">
 
                 @foreach ($category_list as $id => $category_item)
                     <div class="product__item row">
 
                     @foreach ($category_item as $key => $photo)
-                    <div class="col-6 col-lg-3">
-                        <img class="product__image img-fluid" src="{{ asset('uploads/' . $photo) }}" onclick="showModal(this)" id="myImg" alt="Catalog Photo">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <img class="img-fluid" src="{{ asset('uploads/' . $photo) }}" onclick="showModal(this)" id="myImg" alt="Catalog Photo">
                             <!-- <p class="product__size"></p> -->
                         </div>
                     @endforeach
@@ -42,7 +58,28 @@
                 @endforeach
                 </div>
             </div>
-            @else
+            @endif
+
+            @if ($category_smooth)
+            <div class="product__items">
+                <div class="container-b" id="smooth">
+
+                @foreach ($category_smooth as $id => $category_item)
+                    <div class="product__item row">
+
+                    @foreach ($category_item as $key => $photo)
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <img class="img-fluid" src="{{ asset('uploads/' . $photo) }}" onclick="showModal(this)" id="myImg" alt="Catalog Photo">
+                            <!-- <p class="product__size"></p> -->
+                        </div>
+                    @endforeach
+                    </div>
+                @endforeach
+                </div>
+            </div>
+            @endif
+
+            @if(!$category_list && !$category_smooth)
             <h2 class="product__title" style="color: #FF6C52;">No photos yet</h2>   
             @endif
         </div> 
@@ -60,6 +97,13 @@
     </div>
 
     </div>
+
+    @if($category_list) 
+        <script>
+            document.getElementById('smooth').hidden = true;
+        </script>
+    @endif
+
     <script>
         // Get the modal
         var modal = document.getElementById("myModal");
@@ -74,6 +118,20 @@
                 // captionText.innerHTML = this.alt;
             }
         }
+
+       function tagChange (el) {
+            if (el.id == 'tag_1') {
+                document.getElementById('tag_2').classList.remove('active');
+                el.classList.add('active');
+                document.getElementById('pattern').hidden = false;
+                document.getElementById('smooth').hidden = true;
+            } else if (el.id == 'tag_2') {
+                document.getElementById('tag_1').classList.remove('active');
+                el.classList.add('active');
+                document.getElementById('pattern').hidden = true;
+                document.getElementById('smooth').hidden = false;
+            }
+       }
 
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];

@@ -28,7 +28,13 @@
                   </div>
                   <div class="row">
                       <div class="col-4">
-                          <input type="file" class="form-control" name="images[]" multiple>
+                          <label for="photos">З малюнком</label>
+                          <a href="{{ route('destroyPattern', [$catalogItem->id, 'pattern']) }}" class="btn btn-danger">Видалити фотографії з малюнком</a>
+                          <input type="file" class="form-control" id="photos" name="images[]" multiple>
+                      </div> <div class="col-4">
+                          <label for="smooth">Гладкі</label>
+                          <a href="{{ route('destroySmooth', [$catalogItem->id]) }}" class="btn btn-danger">Видалити фотографії без малюнку</a>
+                          <input type="file" class="form-control" id="photos-smooth" name="smooth[]" multiple>
                       </div>
                   </div>
                 </div>

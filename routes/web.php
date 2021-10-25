@@ -41,6 +41,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin_index');
     Route::resource('form', FormController::class);
     Route::resource('catalog', AdminCatalogController::class);
+    Route::get('/catalog/smooth/{id}', [AdminCatalogController::class, 'destroySmooth'])->name('destroySmooth');
+    Route::get('/catalog/pattern/{id}', [AdminCatalogController::class, 'destroyPattern'])->name('destroyPattern');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

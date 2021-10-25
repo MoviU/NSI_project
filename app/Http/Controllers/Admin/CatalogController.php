@@ -81,6 +81,7 @@ class CatalogController extends Controller
     {   
         $catalog = Catalog::find($id);
         if ($request->hasFile('images')) {
+            $data = [];
             foreach ($request->file('images') as $img) {
                 $new_name = rand() . '.' . $img->getClientOriginalExtension();
                 $img->move(public_path('uploads'), $new_name);
@@ -88,7 +89,15 @@ class CatalogController extends Controller
             }
             $catalog->photos = json_encode($data);
         }
-        
+        if ($request->hasFile('smooth')) {
+            $data = [];
+            foreach ($request->file('smooth') as $img) {
+                $new_name = rand() . '.' . $img->getClientOriginalExtension();
+                $img->move(public_path('uploads'), $new_name);
+                $data[] = $new_name;
+            }
+            $catalog->photos_smooth = json_encode($data);
+        }
 
         $catalog->name = $request->name;
 
@@ -107,5 +116,27 @@ class CatalogController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function destroySmooth($id)
+    {
+        $catalog = Catalog::find($id);
+
+        $catalog->photos_smooth = null;
+
+        $catalog->save();
+
+        return redirect()->back()->with('success', 'Фото видалено успішно');
+    }
+
+    public function destroyPattern($id)
+    {
+        $catalog = Catalog::find($id);
+
+        $catalog->photos = null;
+
+        $catalog->save();
+
+        return redirect()->back()->with('success', 'Фото видалено успішно');
     }
 }

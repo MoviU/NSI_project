@@ -1,56 +1,93 @@
-<div class="wrapper">
+@extends('layouts.index')
+
+@section('content')
 <!---------------------------- PAGE 1 -------------------------------------->
-        <div class="main-page">
-            @include('components.header')
-            <main class="page" id="main">
-                <div class="main-block__body container">
-                    <div class="main-block__title">
-                        Hello! We are NSI.
-                        And we do gypsum stucco.
-                    </div>
-                    <div class="main-block__subtitle">
-                        We will create a exquisite interior and comfort in your home
-                    </div>
-                    <div class="main-block__button" id="menu3">
-                        <a class="main-block__button-catalog clickable" href="#tab_1">
-                          Catalog    
-                        </a>
-                    </div>
-                    <div class="main-block__text">
-                        On this site you can:
-                    </div>
-                    <div class="main-block__image">
-                        <img class="image-1" src="{{ asset('img/1.svg') }}" alt="">
-                        <img class="overlay" src="{{ asset('img/rectangle.svg') }}" alt="">
-                    </div>
-                </div>
-            </main>
-            <section class="section__content container" id="menu2">
-                <div class="content__link">
-                    <a class="link__button clickable" href="#tab_2">
-                        Learn about us
-                    </a>
-                </div>
-                <div class="content__link">
-                    <a class="link__button clickable" href="#tab_3">
-                        Contact us
-                    </a>
-                </div>
-                <div class="content__link">
-                    <a class="link__button" href="{{ url('form/create') }}">
-                        Order a design
-                    </a>
-                </div>  
-            </section>
-            <aside class="sidebar">
-                <img class="lang" src="{{ asset('img/uk.svg') }}" alt="">
-                <div onclick="goDown()">
-                    <img class="control" src="{{ asset('img/arrow.svg') }}" alt="">  
-                </div>
-            </aside>
+        <div class="main-page slide" data-section-name="main" id="main">
+                <header class="header">
+                        <div class="header-container container">
+                            <nav class="header__menu menu">
+                                <a href="" class="header__logo">
+                                    <img src="img/logo.svg" alt="">
+                                </a>
+                                <ul class="menu__list">
+                                    <li class="menu__item">
+                                        <a href="#tab_2" class="menu__link">About</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="#tab_3" class="menu__link">Contact</a>
+                                    </li>
+                                    <li class="menu__item">
+                                        <a href="form.html" class="menu__link">Order design</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <section class="header-block__row"> 
+                                <div class="header-block__search">
+                                    <div class="search__block">
+                                        <form action="">
+                                            <input type="text" placeholder="search">
+                                            <button type="submit">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </form>
+                                        <img src="img/line.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="header-block__burger-menu">
+                                    <img src="img/menu_burger.svg" alt="">
+                                </div>
+                            </section>
+                        </div>
+                    </header>
+                    <main class="page">
+                        <div class="main-block__body container">
+                            <div class="main-block__title">
+                                Hello! We are NSI.
+                                And we do gypsum stucco.
+                            </div>
+                            <div class="main-block__subtitle">
+                                We will create a exquisite interior and comfort in your home
+                            </div>
+                            <div class="main-block__button" id="menu3">
+                                <a class="main-block__button-catalog clickable" href="#tab_1">
+                                Catalog    
+                                </a>
+                            </div>
+                            <div class="main-block__text">
+                                On this site you can:
+                            </div>
+                            <div class="main-block__image">
+                                <img class="image-1" src="{{ asset('img/1.svg') }}" alt="">
+                                <img class="overlay" src="{{ asset('img/rectangle.svg') }}" alt="">
+                            </div>
+                        </div>
+                    </main>
+                    <section class="section__content container" id="menu2">
+                        <div class="content__link">
+                            <a class="link__button clickable" href="#tab_2">
+                                Learn about us
+                            </a>
+                        </div>
+                        <div class="content__link">
+                            <a class="link__button clickable" href="#tab_3">
+                                Contact us
+                            </a>
+                        </div>
+                        <div class="content__link">
+                            <a class="link__button" href="{{ url('form/create') }}">
+                                Order a design
+                            </a>
+                        </div>  
+                    </section>
+                    <aside class="sidebar">
+                        <img class="lang" src="{{ asset('img/uk.svg') }}" alt="">
+                        <div onclick="goDown()">
+                            <img class="control" src="{{ asset('img/arrow.svg') }}" alt="">  
+                        </div>
+                    </aside>
         </div>
 <!------------------------------ PAGE 2 -------------------------------------->
-       <div id="tab_1" class="catalog-page container">
+       <div id="1_tab" class="catalog-page container slide" data-section-name="catalog">
         <section class="catalog-header">
             <a href="index.html" class="catalog-header__logo">
                 <img src="{{ asset('img/logo.svg') }}" alt="">
@@ -127,7 +164,7 @@
         </section>
        </div>
 <!------------------------------ PAGE 3 ------------------------------------->
-        <div id="tab_2" class="about-wrapper container">
+        <div id="2_tab" class="about-wrapper container slide" data-section-name="contactUs">
             <div class="about-bg">
                 <img src="{{ asset('img/about_header.svg') }}" alt="">
             </div>
@@ -213,7 +250,7 @@
             </main>
         </div>
 <!-------------------------------- PAGE 4 ------------------------------------------>
-        <div id="tab_3" class="contact container">
+        <div id="3_tab" class="contact container slide" data-section-name="footer">
             <header class="header__contact">
                 <div class="contact__logo">
                     <a href="{{ route('index') }}">
@@ -287,95 +324,4 @@
                 </div>
             </main>
         </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    
-    <script>
-        function addActive (el) {
-            for (i = 1; i <= 8;) {
-                var id = '0' + i;
-                var tab_id = 'tab_0' + i;
-                console.log(id);
-
-                var actived = document.getElementById(id);   
-                if (actived.classList.contains('active')) {
-                    actived.classList.remove('active');
-                }
-                var actived_photot = document.getElementById(tab_id);   
-                if (actived_photot.classList.contains('active-photo')) {
-                    actived_photot.classList.remove('active-photo');
-                }
-                i++;
-            }
-            var btn = document.getElementById(el);
-            btn.classList.add("active");
-            var photo = document.getElementById("tab_" + el);
-            photo.classList.add("active-photo");
-            document.getElementById('view-link').href = '/catalog/' + btn.innerHTML;
-        }
-        
-        $(document).ready(function(){
-            $("#menu").on("click","a", function (event) {
-                //отменяем стандартную обработку нажатия по ссылке
-                event.preventDefault();
-
-                //забираем идентификатор бока с атрибута href
-                var id = $(this).attr('href'),
-
-                //узнаем высоту от начала страницы до блока на который ссылается якорь
-                top = $(id).offset().top;
-
-                //анимируем переход на расстояние - top за 1500 мс
-                $('body,html').animate({scrollTop: top}, 1500);
-            });
-        });
-        $(document).ready(function(){
-            $("#menu2").on("click",".clickable", function (event) {
-                //отменяем стандартную обработку нажатия по ссылке
-                event.preventDefault();
-
-                //забираем идентификатор бока с атрибута href
-                var id = $(this).attr('href'),
-
-                //узнаем высоту от начала страницы до блока на который ссылается якорь
-                top = $(id).offset().top;
-
-                //анимируем переход на расстояние - top за 1500 мс
-                $('body,html').animate({scrollTop: top}, 1500);
-            });
-        });
-        $(document).ready(function(){
-            $("#menu3").on("click",".clickable", function (event) {
-                //отменяем стандартную обработку нажатия по ссылке
-                event.preventDefault();
-
-                //забираем идентификатор бока с атрибута href
-                var id = $(this).attr('href'),
-
-                //узнаем высоту от начала страницы до блока на который ссылается якорь
-                top = $(id).offset().top;
-
-                //анимируем переход на расстояние - top за 1500 мс
-                $('body,html').animate({scrollTop: top}, 1500);
-            });
-        });
-        var pages = ["#tab_1", "#tab_2", "#tab_3"];
-        window.i = 0;
-        function goDown () {
-            var id = pages[window.i];
-
-            top = $(id).offset().top
-            console.log(top);
-
-            $('body,html').animate({scrollTop: top}, 1500);
-
-            window.i++;
-
-            if (window.i > 2) {
-                window.i = 0;
-            }
-        }
-    </script>
-</body>
-</html>
+@endsection
